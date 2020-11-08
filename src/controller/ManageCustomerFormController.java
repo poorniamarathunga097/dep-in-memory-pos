@@ -5,19 +5,28 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import model.Customer;
 
 public class ManageCustomerFormController {
     public AnchorPane root;
     public JFXTextField txtCustomerId;
     public JFXTextField txtName;
     public JFXTextField txtAddress;
-    public TableView tblCustomer;
+    public TableView<Customer> tblCustomer;
     public TableColumn colCustomerId;
     public TableColumn colFullName;
     public TableColumn colAddress;
     public TableColumn colSalary;
     public TableColumn colOperate;
     public JFXTextField txtAddress1;
+
+    public void initialize(){
+        loadAllCustomers();
+    }
+
+    private void loadAllCustomers() {
+
+    }
 
     public void btnAddCustomer_OnAction(ActionEvent actionEvent) {
     }
