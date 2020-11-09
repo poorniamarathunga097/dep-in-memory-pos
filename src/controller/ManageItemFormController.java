@@ -5,9 +5,7 @@ import db.Database;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import model.Item;
@@ -47,9 +45,32 @@ public class ManageItemFormController {
         tblItem.setItems(iList);
     }
 
-    public void btnAddCustomer_OnAction(ActionEvent actionEvent) {
+    public void btnAddItem_OnAction(ActionEvent actionEvent) {
+        try {
+            int qty = Integer.parseInt(txtQtyOnHand.getText());
+            double unitPrice = Double.parseDouble(txtPrice.getText());
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.WARNING,
+                    "Something went wrong !",
+                    ButtonType.OK).show();
+            return;
+        }
 
-
+        Item i = new Item(
+                txtItemCode.getText(),
+                txtDescription.getText(),
+                Integer.parseInt(txtQtyOnHand.getText()),
+                Double.parseDouble(txtPrice.getText())
+        );
+        boolean isAdded = Database.itemDataTable.add(i);
+        if (isAdded) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Saved !!",
+                    ButtonType.OK).show();
+            loadAllItems();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Try Again !!",
+                    ButtonType.OK).show();
+        }
     }
 
     public void btnUpdateCustomer_OnAction(ActionEvent actionEvent) {
