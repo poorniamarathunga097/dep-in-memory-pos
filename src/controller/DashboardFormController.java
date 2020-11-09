@@ -23,6 +23,12 @@ public class DashboardFormController {
     }
 
     public void btn_ManageItems_OnAction(ActionEvent actionEvent) {
+        try {
+            setUI("ManageItemForm");
+        } catch (IOException e) {
+            new Alert(Alert.AlertType.ERROR,"No Such Page to load");
+            e.printStackTrace();
+        }
     }
 
     public void btn_PlaceOrder_OnAction(ActionEvent actionEvent) {

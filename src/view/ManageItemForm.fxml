@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="447.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageItemFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="83.0" layoutY="8.0" prefHeight="30.0" prefWidth="387.0" text="Manage Items" textFill="#756868" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtItemCode" labelFloat="true" layoutX="26.0" layoutY="68.0" prefHeight="26.0" prefWidth="204.0" promptText="Item Code" />
+      <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="26.0" layoutY="111.0" prefHeight="26.0" prefWidth="204.0" promptText="Description" />
+      <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="25.0" layoutY="157.0" prefHeight="26.0" prefWidth="204.0" promptText="Qty On Hand" />
+      <JFXButton layoutX="331.0" layoutY="114.0" onAction="#btnAddCustomer_OnAction" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #33adff;" text="+Add" />
+      <JFXButton layoutX="331.0" layoutY="163.0" onAction="#btnUpdateCustomer_OnAction" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #33adff;" text="Update" />
+      <JFXTextField labelFloat="true" layoutX="26.0" layoutY="254.0" prefHeight="26.0" prefWidth="370.0" promptText="Search " />
+      <JFXButton layoutX="405.0" layoutY="255.0" onAction="#btnSearch_OnAction" prefHeight="26.0" prefWidth="93.0" style="-fx-background-color: #008ae6;" text="Search" />
+      <TableView fx:id="tblItem" layoutY="325.0" prefHeight="215.0" prefWidth="545.0">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="103.0" text="Item Code" />
+          <TableColumn fx:id="colDescription" prefWidth="105.0" text="Description" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="132.0" text="Qty On Hand" />
+            <TableColumn fx:id="colPrice" prefWidth="92.0" text="Price" />
+            <TableColumn fx:id="colOperate" prefWidth="112.0" text="Operate" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtPrice" labelFloat="true" layoutX="25.0" layoutY="200.0" prefHeight="26.0" prefWidth="204.0" promptText="Price" />
+   </children>
+</AnchorPane>
