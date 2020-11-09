@@ -31,6 +31,6 @@
             <TableColumn fx:id="colOperate" prefWidth="112.0" text="Operate" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="txtAddress1" labelFloat="true" layoutX="25.0" layoutY="200.0" prefHeight="26.0" prefWidth="204.0" promptText="Salary" />
+      <JFXTextField fx:id="txtSalary" labelFloat="true" layoutX="25.0" layoutY="200.0" prefHeight="26.0" prefWidth="204.0" promptText="Salary" />
    </children>
 </AnchorPane>

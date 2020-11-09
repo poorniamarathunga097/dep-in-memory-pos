@@ -5,9 +5,7 @@ import db.Database;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import model.Customer;
@@ -24,7 +22,7 @@ public class ManageCustomerFormController {
     public TableColumn colAddress;
     public TableColumn colSalary;
     public TableColumn colOperate;
-    public JFXTextField txtAddress1;
+    public JFXTextField txtSalary;
 
     public void initialize(){
 
@@ -49,6 +47,29 @@ public class ManageCustomerFormController {
     }
 
     public void btnAddCustomer_OnAction(ActionEvent actionEvent) {
+        try{
+        double salary = Double.parseDouble(txtSalary.getText());
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.WARNING, e.toString(),
+                    ButtonType.OK).show();
+            return;
+        }
+
+        Customer c1 = new Customer(
+                txtCustomerId.getText(),
+                txtName.getText(),
+                txtAddress.getText(),
+                Double.parseDouble(txtSalary.getText())
+        );
+        boolean isAdded = Database.customerDataTable.add(c1);
+        if (isAdded) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Saved !!",
+                    ButtonType.OK).show();
+                    loadAllCustomers();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Try Again !!",
+                    ButtonType.OK).show();
+        }
     }
 
     public void btnUpdateCustomer_OnAction(ActionEvent actionEvent) {
