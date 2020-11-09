@@ -19,7 +19,7 @@
       <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="26.0" layoutY="111.0" prefHeight="26.0" prefWidth="204.0" promptText="Description" />
       <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="25.0" layoutY="157.0" prefHeight="26.0" prefWidth="204.0" promptText="Qty On Hand" />
       <JFXButton layoutX="331.0" layoutY="114.0" onAction="#btnAddItem_OnAction" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #33adff;" text="+Add" />
-      <JFXButton layoutX="331.0" layoutY="163.0" onAction="#btnUpdateCustomer_OnAction" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #33adff;" text="Update" />
+      <JFXButton layoutX="331.0" layoutY="163.0" onAction="#btnUpdateItems_OnAction" prefHeight="26.0" prefWidth="158.0" style="-fx-background-color: #33adff;" text="Update" />
       <JFXTextField labelFloat="true" layoutX="26.0" layoutY="254.0" prefHeight="26.0" prefWidth="370.0" promptText="Search " />
       <JFXButton layoutX="405.0" layoutY="255.0" onAction="#btnSearch_OnAction" prefHeight="26.0" prefWidth="93.0" style="-fx-background-color: #008ae6;" text="Search" />
       <TableView fx:id="tblItem" layoutY="325.0" prefHeight="215.0" prefWidth="545.0">

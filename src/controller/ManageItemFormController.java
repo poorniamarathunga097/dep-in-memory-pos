@@ -73,7 +73,18 @@ public class ManageItemFormController {
         }
     }
 
-    public void btnUpdateCustomer_OnAction(ActionEvent actionEvent) {
+    public void btnUpdateItems_OnAction(ActionEvent actionEvent) {
+        for (Item item:Database.itemDataTable
+        ) {
+            if (txtItemCode.getText().equals(item.getCode())){
+                item.setCode(txtItemCode.getText());
+                item.setDescription(txtDescription.getText());
+                item.setQtyOnHand(Integer.parseInt(txtQtyOnHand.getText()));
+                item.setPrice(Double.parseDouble(txtPrice.getText()));
+                loadAllItems();
+                return;
+            }
+        }
     }
 
     public void btnSearch_OnAction(ActionEvent actionEvent) {
