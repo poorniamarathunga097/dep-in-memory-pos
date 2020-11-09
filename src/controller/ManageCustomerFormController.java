@@ -73,6 +73,17 @@ public class ManageCustomerFormController {
     }
 
     public void btnUpdateCustomer_OnAction(ActionEvent actionEvent) {
+        for (Customer customer : Database.customerDataTable
+        ) {
+            if (customer.getId().equals(txtCustomerId.getText())) {
+                customer.setId(txtCustomerId.getText());
+                customer.setName(txtName.getText());
+                customer.setAddress(txtAddress.getText());
+                customer.setSalary(Double.parseDouble(txtSalary.getText()));
+                loadAllCustomers();
+                return;
+            }
+        }
     }
 
     public void btnSearch_OnAction(ActionEvent actionEvent) {
